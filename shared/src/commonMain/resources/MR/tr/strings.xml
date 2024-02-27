@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KmmQuickStart</string>
+
+    <!-- Login -->
+    <string name="login">Giriş</string>
+    <string name="phone_number_or_email_hint">Telefon numarası</string>
+    <string name="login_description">Yeni nesil geçiş kontrol</string>
+    <string name="search_country_code">Ülke kodunu ara</string>
+
+    <!-- Image ALT  -->
+    <string name="app_logo_alt">Uygulama logosu</string>
+
+</resources>

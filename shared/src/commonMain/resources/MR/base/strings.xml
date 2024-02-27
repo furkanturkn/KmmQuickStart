@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KmmQuickStart</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="phone_number_or_email_hint">Phone number</string>
+    <string name="login_description">Kiseki no sedaini</string>
+    <string name="search_country_code">Search Country Code</string>
+
+    <!-- Image ALT  -->
+    <string name="app_logo_alt">Application logo</string>
+
+</resources>
