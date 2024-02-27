@@ -31,20 +31,6 @@ struct CountrySelection: View {
     }
 }
 
-struct CountrySelectionSheet: View {
-    var onDismiss: () -> Void
-    var countries: [Country]
-    var onCountrySelect: (Country) -> Void
-    
-    var body: some View {
-        Text("ffds")
-        /*
-        BottomSheet(onDismiss: onDismiss) {
-            CountrySelectionSheetContent(countries: countries, onCountrySelect: onCountrySelect)
-        }
-        */
-    }
-}
 
 struct CountrySelectionSheetContent: View {
     var countries: [Country]
@@ -54,9 +40,15 @@ struct CountrySelectionSheetContent: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 24) {
-            TextField("Search Country Code", text: $searchText)
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField(
+                Strings().get(
+                    id: SharedRes.strings().search_country_code,
+                    args: []
+                ),
+                text: $searchText
+            )
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            .textFieldStyle(RoundedBorderTextFieldStyle())
             
             ScrollView {
                 LazyVStack {

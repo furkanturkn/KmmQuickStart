@@ -49,46 +49,22 @@ struct LoginScreen: View {
                     onWelcomeContractEvent: { viewModel.onEvent(event: $0) }
                 )
                 
+                Spacer().frame(height: 16)
                 
+                StandardButton(
+                    onClick: {
+                        viewModel.onEvent(event: LoginContractEvent.LoginClicked())
+                    },
+                    text: Strings().get(
+                        id: SharedRes.strings().login,
+                        args: []
+                    ))
                 
                 Spacer().frame(height: 16)
                 
-                /*
-                 NavigationLink(
-                 destination: HomeScreen().navigationBarBackButtonHidden(true),
-                 isActive: Binding(
-                 get: { viewModel.state.currentRoute == "home" },
-                 set: { _ in
-                 
-                 }
-                 
-                 )
-                 ) {
-                 
-                 StandardButton(
-                 onClick: {
-                 viewModel.onEvent(event: LoginContractEvent.LoginClicked())
-                 },
-                 text: "Login")
-                 
-                 }
-                 
-                 */
-                Spacer().frame(height: 16)
-                
-                
-                /*
-                 NavigationLink(
-                 destination: OtpScreen(validatePhoneNumberUseCase: validatePhoneNumberUseCase)
-                 ) {
-                 
-                 Text("Get password/ renew")
-                 .foregroundColor(Color.primary)
-                 .font(.headline)
-                 
-                 }
-                 
-                 */
+                Text("Get password/ renew")
+                    .foregroundColor(Color.primary)
+                    .font(.headline)
                 
                 Spacer()
                 
@@ -134,12 +110,22 @@ struct TopSection: View {
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Bau Pass")
-                        .foregroundColor(Color.background)
-                        .font(.largeTitle)
-                        .padding(.bottom, 8)
+                    Text(
+                        Strings().get(
+                            id: SharedRes.strings().app_name,
+                            args: []
+                        )
+                    )
+                    .foregroundColor(Color.background)
+                    .font(.largeTitle)
+                    .padding(.bottom, 8)
                     
-                    Text("New generation access control")
+                    Text(
+                        Strings().get(
+                            id: SharedRes.strings().login_description,
+                            args: []
+                        )
+                    )
                         .foregroundColor(Color.background)
                         .font(.headline)
                 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Shared
 
 final class Router: ObservableObject {
 
@@ -17,9 +18,9 @@ final class Router: ObservableObject {
         var stringValue: String {
             switch self {
             case .login:
-                return "login"
+                return Shared.Routes().LOGIN
             case .home:
-                return "home"
+                return Shared.Routes().HOME
             }
         }
     }
